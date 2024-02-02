@@ -1,0 +1,15 @@
+version: '3'
+services:
+  flask-backend:
+    image: vincentcotella/my-flask-app:latest
+    volumes:
+      - ./data:/app/data 
+    environment:
+      - CURRENT_ENVIRONMENT=production
+
+  nginx-frontend:
+    image: vincentcotella/my-frontend-image:latest
+    ports:
+      - "8090:80"
+    environment:
+      - WS_BACK_URL=http://flask-backend:5000
