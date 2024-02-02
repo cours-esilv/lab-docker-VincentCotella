@@ -1,0 +1,6 @@
+docker run -d --name my-frontend-container \                                                                             
+    -p 8090:80 \
+    -e WS_BACK_URL=http://5000-coursesilv-labdockervin-4nhhf5el19v.ws-eu107.gitpod.io \
+    vincentcotella/my-frontend-image:latest
+
+# then we can acces to the frontend webpage with https://8090-coursesilv-labdockervin-4nhhf5el19v.ws-eu107.gitpod.io/ (returns the API informations)
